@@ -64,10 +64,13 @@ if(isset($_GET['action'])) {
             if (!empty($errors)) {
                 foreach ($errors as $error):
             ?>
-            <div class="err-box">
-                <span><?php echo $error; ?></span>
-            </div>
-            <?php endforeach; } ?>
+                <div class="err-box">
+                    <span><?php echo $error; ?></span>
+                </div>
+            <?php 
+                endforeach; 
+            } 
+            ?>
             <h2>Tâches à faire</h2>
             <table>
                 <thead>
@@ -112,6 +115,12 @@ if(isset($_GET['action'])) {
 </body>
 <script src="/js/feather.min.js"></script>
 <script>
-    feather.replace()
+    feather.replace();
+
+    const dateControl = document.querySelector('input[type="datetime-local"]');
+    var now = new Date();
+    now.setMonth(now.getMonth() + 1);
+    dateControl.value = now.toISOString().slice(0, -8);
+    console.log(now.toISOString());
 </script>
 </html>
