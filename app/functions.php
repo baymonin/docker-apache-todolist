@@ -17,7 +17,7 @@ function redirectUnauthenticated() {
 }
 
 function connectDB () {
-    $dsn = 'mysql:dbname=b3cyber;host=mysql';
+    $dsn = 'mysql:dbname=todo;host=mysql';
     $user = 'root';
     $password = '';
 

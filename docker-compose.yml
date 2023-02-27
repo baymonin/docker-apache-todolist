@@ -4,8 +4,10 @@ services:
   mysql:
     image: mysql
     environment:
-      MYSQL_DATABASE: 'b3cyber'
+      MYSQL_DATABASE: 'todo'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - ./data/db:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin
