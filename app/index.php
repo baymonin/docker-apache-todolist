@@ -92,7 +92,7 @@ if(isset($_GET['action'])) {
                     <td><?php echo $task['label']; ?></td>
                     <td><?php echo $task['description']; ?></td>
                     <td><?php echo ($task['due_at'] ? date('d/m/Y H:i', strtotime($task['due_at'])) : ''); ?></td>
-                    <td><a href="index.php?action=del&tid=<?php echo $task['id'];?>">Supprimer</a></td>
+                    <td><a href="index.php?action=del&tid=<?php echo $task['id'];?>"><i data-feather="trash-2"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -110,4 +110,8 @@ if(isset($_GET['action'])) {
         </div>
     </div>
 </body>
+<script src="/js/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
 </html>
