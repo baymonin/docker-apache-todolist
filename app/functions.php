@@ -3,15 +3,15 @@
 session_start();
 
 function redirectAlreadyConnected() {
-    if (isset($_SESSION['email']) != "") {
-        header("Location: login.php");
+    if (isset($_SESSION['userid']) != "") {
+        header("Location: index.php");
         exit;
     }
 }
 
 function redirectUnauthenticated() {
-    if (!isset($_SESSION['email'])) {
-        header("Location: index.php");
+    if (!isset($_SESSION['userid'])) {
+        header("Location: login.php");
         exit;
     }
 }
