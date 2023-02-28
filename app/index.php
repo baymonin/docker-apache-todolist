@@ -22,9 +22,11 @@ if(isset($_GET['action'])) {
         
             if (empty($errors)) {  
                 $userid = $_SESSION['userid'];
+                $xss_label = htmlspecialchars($label, ENT_QUOTES, 'UTF-8');
+                $xss_desc = htmlspecialchars($description, ENT_QUOTES, 'UTF-8');
         
                 $query = $link->prepare("INSERT INTO tasks (owner_id, label, description, due_at) VALUES (:userid, :label, :description, :due_at)");
-                $query->execute(['userid' => $userid, 'label' => $label, 'description' => $description, 'due_at' => $due_at]);
+                $query->execute(['userid' => $userid, 'label' => $xss_label, 'description' => $xss_desc, 'due_at' => $due_at]);
             }
         }
     } elseif($_GET['action'] == 'del') {
