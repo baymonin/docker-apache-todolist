@@ -88,6 +88,23 @@ hr {
     text-align: center;
 }
 
+#coll-content {
+    display: none;
+}
+
+#chevron-down {
+    display: none;
+}
+
+#chevron-right {
+    display: inline-block;
+}
+
+#collapser {
+    text-decoration: none;
+    color: #000000;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

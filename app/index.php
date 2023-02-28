@@ -102,27 +102,22 @@ if(isset($_GET['action'])) {
                 <?php endforeach; ?>
                 </tbody>
             </table>
-            <h2>Ajouter une tâche</h2>
-            <form action="index.php?action=add" method="post">
-                <label for="label">Étiquette:</label>
-                <input type="text" id="label" name="label">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description"></textarea>
-                <label for="due_at">Échéance:</label>
-                <input type="datetime-local" id="due_at" name="due_at">
-                <input type="submit" value="Ajouter">
-            </form>
+
+            <h2><a href='javascript:void(0);' id="collapser">Ajouter une tâche <i id="chevron-right" data-feather="chevron-right"></i><i id="chevron-down" data-feather="chevron-down"></i></a></h2>
+            <div id="coll-content">
+                <form action="index.php?action=add" method="post">
+                    <label for="label">Étiquette:</label>
+                    <input type="text" id="label" name="label">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description"></textarea>
+                    <label for="due_at">Échéance:</label>
+                    <input type="datetime-local" id="due_at" name="due_at">
+                    <input type="submit" value="Ajouter">
+                </form>
+            </div>
         </div>
     </div>
 </body>
 <script src="/js/feather.min.js"></script>
-<script>
-    feather.replace();
-
-    const dateControl = document.querySelector('input[type="datetime-local"]');
-    var now = new Date();
-    now.setMonth(now.getMonth() + 1);
-    dateControl.value = now.toISOString().slice(0, -8);
-    console.log(now.toISOString());
-</script>
+<script src="/js/main.js"></script>
 </html>
